@@ -1,0 +1,63 @@
+#BatchPackApk
+
+BatchPackApk_v1 a tool for batch package Android apk with channel tag.
+
+Don't need keystrore. Only use a signed apk.
+
+#Usage: 
+1 java -jar batchpackapk.jar apk_path output_path [options]
+```java
+  Options:
+    -help, --help
+       Default: false
+    -c
+       channel list
+       Default: []
+    -cf
+       channel list path
+    -debug, -verbose
+       Debug mode
+       Default: false
+```
+2 get Channel code
+```java
+    private static String attainChannelFromMETAINF(Context context) {
+        ApplicationInfo appinfo = context.getApplicationInfo();
+        String sourceDir = appinfo.sourceDir;
+        String result = "";
+        ZipFile zipfile = null;
+        try {
+            zipfile = new ZipFile(sourceDir);
+            Enumeration<?> entries = zipfile.entries();
+            while (entries.hasMoreElements()) {
+                ZipEntry entry = ((ZipEntry) entries.nextElement());
+                if (entry.getName().startsWith("META-INF/umeng")) {
+                    result = entry.getName();
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (zipfile != null) {
+                try {
+                    zipfile.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        String[] split = result.split("-");
+        if (split != null && split.length >= 3) {
+            result = result.substring(split[0].length() + split[1].length() + 2);
+            return result;
+        } else {
+            result = "Unknown";
+        }
+        return result;
+    }
+```
+-----
+Blog:http://blog.csdn.net/masonblog
+
+Email:MasonLiuChn@gmail.com
