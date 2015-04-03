@@ -4,6 +4,8 @@ BatchPackApk_v1 a tool for batch package Android apk with channel tag.
 
 Don't need keystrore. Only use a signed apk.
 
+http://tech.meituan.com/mt-apk-packaging.html
+
 #Usage: 
 1 java -jar batchpackapk.jar apk_path output_path [options]
 ```java
