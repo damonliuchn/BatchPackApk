@@ -23,13 +23,11 @@ http://tech.meituan.com/mt-apk-packaging.html
 ```
 2 get Channel code
 ```java
-    private static String attainChannelFromMETAINF(Context context) {
-        ApplicationInfo appinfo = context.getApplicationInfo();
-        String sourceDir = appinfo.sourceDir;
+private static String attainChannelFromMETAINF(Context context) {
         String result = "";
         ZipFile zipfile = null;
         try {
-            zipfile = new ZipFile(sourceDir);
+            zipfile = new ZipFile(context.getApplicationInfo().sourceDir);
             Enumeration<?> entries = zipfile.entries();
             while (entries.hasMoreElements()) {
                 ZipEntry entry = ((ZipEntry) entries.nextElement());
@@ -50,11 +48,11 @@ http://tech.meituan.com/mt-apk-packaging.html
             }
         }
         String[] split = result.split("-");
-        if (split != null && split.length >= 3) {
+        if (split.length >= 3) {
             result = result.substring(split[0].length() + split[1].length() + 2);
             return result;
         } else {
-            result = "Unknown";
+            result = "Develop";
         }
         return result;
     }
