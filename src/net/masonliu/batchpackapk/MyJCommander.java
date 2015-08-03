@@ -1,4 +1,4 @@
-package com.mason;
+package net.masonliu.batchpackapk;
 import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -18,8 +18,9 @@ public class MyJCommander {
 			sb.append("\n");
 			sb.append("********************************************************\n");
 			sb.append("BatchPackApk\n");
-			sb.append("BatchPackApk_v1 a tool for batch package Android apk with channel tag\n");
-			sb.append("Copyright 2014 Mason Liu <masonliuchn@gmail.com\n");
+			sb.append("BatchPackApk is a tool for batch package Android apk with channel string\n");
+			sb.append("Example:java -jar batchpackapk.jar example.apk ./ -c channel1,channel2\n");
+			sb.append("Copyright 2014 Mason Liu <masonliuchn@gmail.com>\n");
 			sb.append("********************************************************\n");
 			sb.append("Usage: batchpackapk <apk_path> <output_path>");
 			jc.setProgramName(sb.toString());
@@ -48,10 +49,10 @@ public class MyJCommander {
 		}
 	}
 	
-	@Parameter(names = "-cf", description = "channel list path")
+	@Parameter(names = "-cf", description = "channel list file path")
 	public String cf;
 
-	@Parameter(names = "-c", description = "channel list")
+	@Parameter(names = "-c", description = "channel list string, Example:channel1,channel2")
 	public List<String> channels = new ArrayList<String>();
 
 	@Parameter
@@ -64,6 +65,6 @@ public class MyJCommander {
 	@Parameter(names = { "-debug", "-verbose" }, description = "Debug mode")
 	public boolean debug = false;
 
-	@Parameter(names = { "-help", "--help" }, help = true)
+	@Parameter(names = { "-help", "--help" }, description = "Help mode",help = true)
 	public boolean help;
 }

@@ -1,4 +1,4 @@
-package com.mason;
+package net.masonliu.batchpackapk;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -55,7 +55,7 @@ public class Main {
 			
 			for(int i=0;i<channels.length;i++){
 				FileUtil.copyFile(apkFile, tmpApk);
-				File channelFile = new File(outPath+"/umeng-"+channels[i]);
+				File channelFile = new File(outPath+"/channel-"+channels[i]);
 				FileUtil.createNewFile(channelFile);
 				ZipUtil.addFileToZip2(tmpApk,"/META-INF",channelFile);
 				FileUtil.delete(channelFile);

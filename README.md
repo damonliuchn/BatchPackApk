@@ -31,7 +31,7 @@ private static String attainChannelFromMETAINF(Context context) {
             Enumeration<?> entries = zipfile.entries();
             while (entries.hasMoreElements()) {
                 ZipEntry entry = ((ZipEntry) entries.nextElement());
-                if (entry.getName().startsWith("META-INF/umeng")) {
+                if (entry.getName().startsWith("META-INF/channel")) {
                     result = entry.getName();
                     break;
                 }
