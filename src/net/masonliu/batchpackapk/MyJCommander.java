@@ -49,7 +49,7 @@ public class MyJCommander {
 		}
 	}
 	
-	@Parameter(names = "-cf", description = "channel list file path")
+	@Parameter(names = "-cf", description = "channel list file path,file content format:one line,one channel string")
 	public String cf;
 
 	@Parameter(names = "-c", description = "channel list string, Example:channel1,channel2")
