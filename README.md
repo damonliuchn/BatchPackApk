@@ -1,8 +1,10 @@
 #BatchPackApk
 
-BatchPackApk_v1 a tool for batch package Android apk with channel tag.
+BatchPackApk_v1 a tool for batch package Android apk with channel string.
 
 Don't need keystrore. Only use a signed apk.
+
+Example:java -jar batchpackapk.jar example.apk ./ -c channel1,channel2
 
 http://tech.meituan.com/mt-apk-packaging.html
 
@@ -13,10 +15,10 @@ http://tech.meituan.com/mt-apk-packaging.html
     -help, --help
        Default: false
     -c
-       channel list
+       channel list string, Example:channel1,channel2
        Default: []
     -cf
-       channel list path
+       channel list file path,file content format:one line,one channel string
     -debug, -verbose
        Debug mode
        Default: false
