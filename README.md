@@ -1,16 +1,20 @@
 #BatchPackApk
 
-BatchPackApk_v1 a tool for batch package Android apk with channel string.
+BatchPackApk is a tool for batch package Android apk with channel string.
 
 Don't need keystrore. Only use a signed apk.
-
-Example:java -jar batchpackapk.jar example.apk ./ -c channel1,channel2
 
 http://tech.meituan.com/mt-apk-packaging.html
 
 #Usage: 
-1 java -jar batchpackapk.jar apk_path output_path [options]
+1 
 ```java
+  example: 
+  
+  java -jar batchpackapk.jar example.apk ./ -c channel1,channel2
+
+  introduction:
+  java -jar batchpackapk.jar apk_path output_path [options]
   Options:
     -help, --help
        Default: false
