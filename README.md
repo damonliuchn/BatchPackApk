@@ -2,9 +2,7 @@
 
 BatchPackApk is a tool for batch package Android apk with channel string.
 
-Don't need keystrore. Only use a signed apk.
-
-http://tech.meituan.com/mt-apk-packaging.html
+Don't need keystrore. Only use a signed apk. It can pack a large number apks in one second.
 
 #Usage: 
 1 
