@@ -2,30 +2,16 @@
 
 BatchPackApk is a tool for batch package Android apk with channel string.
 
-Don't need keystrore. Only use a signed apk. It can pack a large number apks in one second.
+1.Don't need keystrore. 
+2.Only use a signed apk. 
+3.It can pack a large number apks in one second.
 
 #Usage: 
-1 
+1.you don't need to write channel value in AndroidManifest.xml,so if you want get the channel value in your app,please use following code.
+For example,you use Umeng to analyse channel: 
 ```java
-  example: 
-  
-  java -jar batchpackapk.jar example.apk ./ -c channel1,channel2
-
-  introduction:
-  java -jar batchpackapk.jar apk_path output_path [options]
-  Options:
-    -help, --help
-       Default: false
-    -c
-       channel list string, Example:channel1,channel2
-       Default: []
-    -cf
-       channel list file path,file content format:one line,one channel string
-    -debug, -verbose
-       Debug mode
-       Default: false
+Umeng.setChannel(attainChannelFromMETAINF(context))
 ```
-2 get Channel code
 ```java
 private static String attainChannelFromMETAINF(Context context) {
         String result = "";
@@ -60,6 +46,27 @@ private static String attainChannelFromMETAINF(Context context) {
         }
         return result;
     }
+```
+
+2.package
+```java
+  example: 
+  
+  java -jar batchpackapk.jar example.apk ./ -c channel1,channel2
+
+  introduction:
+  java -jar batchpackapk.jar apk_path output_path [options]
+  Options:
+    -help, --help
+       Default: false
+    -c
+       channel list string, Example:channel1,channel2
+       Default: []
+    -cf
+       channel list file path,file content format:one line,one channel string
+    -debug, -verbose
+       Debug mode
+       Default: false
 ```
 -----
 Blog:http://blog.csdn.net/masonblog
