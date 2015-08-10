@@ -4,9 +4,11 @@ BatchPackApk is a tool for batch package Android apk with channel string.
 
 1.Don't need keystrore. 
 
-2.Only use a signed apk. 
+2.Only provide a signed apk. 
 
 3.It can pack a large number apks in one second.
+
+4.The signature of generated apk is the same as the signature of you provided APK.
 
 #Usage: 
 1.You don't need to write channel value in AndroidManifest.xml,so if you want get the channel value in your app,please use following code.
