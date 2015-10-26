@@ -45,10 +45,10 @@ private static String attainChannelFromMETAINF(Context context) {
         String[] split = result.split("-");
         if (split.length >= 3) {
             result = result.substring(split[0].length() + split[1].length() + 2);
-            return result;
         } else {
-            result = "Develop";
+            result = "Normal";
         }
+        Log.i("channelFromMETAINF", result);
         return result;
     }
 ```
