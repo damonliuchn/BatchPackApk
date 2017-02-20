@@ -1,3 +1,5 @@
+## PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED,PLEASE GO TO https://github.com/Meituan-Dianping/walle
+
 #BatchPackApk
 
 BatchPackApk is a tool for batch package Android apk with channel string.
