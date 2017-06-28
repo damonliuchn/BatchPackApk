@@ -41,7 +41,7 @@ public class Main {
 //		String apkPath = "/Users/liumeng/Downloads/eleme4_3_1.apk";
 //		String outPath = projectDir+"/output";
 //		String channels [] = {"eleme","google"};
-    	MyJCommander jct = new MyJCommander(args);
+    		MyJCommander jct = new MyJCommander(args);
 		String apkPath = jct.apkpath;
 		String outPath = jct.output;
 		String []channels  = jct.channels.toArray(new String[jct.channels.size()]);
@@ -51,9 +51,8 @@ public class Main {
 		/*******************************************/
 		try {
 			File apkFile = new File(apkPath);
-			File tmpApk = new File(outPath+"/tmp.apk");
-			
 			for(int i=0;i<channels.length;i++){
+				File tmpApk = new File(outPath+"/"+i+"tmp.apk");
 				FileUtil.copyFile(apkFile, tmpApk);
 				File channelFile = new File(outPath+"/channel-"+channels[i]);
 				FileUtil.createNewFile(channelFile);
