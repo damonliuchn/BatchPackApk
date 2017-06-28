@@ -1,6 +1,6 @@
 ## PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED,PLEASE GO TO https://github.com/Meituan-Dianping/walle
 
-#BatchPackApk
+# BatchPackApk
 
 BatchPackApk is a tool for batch package Android apk with channel string.
 
@@ -12,7 +12,7 @@ BatchPackApk is a tool for batch package Android apk with channel string.
 
 4.The signature of generated apk is the same as the signature of you provided APK.
 
-#Usage: 
+# Usage: 
 1.You don't need to write channel value in AndroidManifest.xml,so if you want get the channel value in your app,please use following code.
 
 For example,you use Umeng to analyse channel: 
@@ -76,7 +76,7 @@ private static String attainChannelFromMETAINF(Context context) {
        Default: false
 ```
 -----
-Blog:http://blog.csdn.net/masonblog
+Blog:http://www.masonliu.com
 
 Email:MasonLiuChn@gmail.com
 
